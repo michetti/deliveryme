@@ -1,0 +1,23 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag "devise", media: "all", "data-turbolinks-track" => true %>
+<% end %>
+
+<%= form_for resource,
+             as: resource_name,
+             url: password_path(resource_name),
+             html: { method: :post, class: "form-devise" } do |f| %>
+
+  <h2 class="form-devise-heading">Forgot password?</h2>
+
+  <%= devise_error_messages! %>
+
+  <%= f.email_field :email,
+                    require: true,
+                    autofocus: true,
+                    placeholder: "Email address",
+                    class: "form-control" %>
+
+  <%= f.submit "Send me reset instructions", class: "btn btn-lg btn-primary btn-block" %>
+<% end %>
+
+<%= render "/users/shared/links" %>

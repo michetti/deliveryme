@@ -1,0 +1,16 @@
+<div class="page-header">
+  <div class="row">
+    <div class="col-md-10">
+      <h1>Products</h1>
+    </div>
+    <div class="col-md-2">
+      <div class="btn-group pull-right">
+        <%= render "actions", enabled: [:new] %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ul class="media-list">
+  <%= render partial: "product", collection: @products %>
+</ul>

@@ -1,0 +1,26 @@
+<div class="page-header">
+  <h1>Products <small>Splitted by category</small></h1>
+</div>
+
+<% @categories.each do |category| %>
+  <h2><%= category[:name] %></h2>
+
+  <ul class="media-list">
+    <% category[:products].each do |product| %>
+      <li class="media">
+        <a class="pull-left" href="#">
+          <%= image_tag product.photo.url(:thumb), class: "media-object img-thumbnail" %>
+        </a>
+
+        <div class="media-body">
+          <h4 class="media-heading">
+            <%= product.title %>
+            <small class="pull-right"><%= number_to_currency product.price %></small>
+          </h4>
+
+          <%= product.description %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h1>New Restaurant</h1>
+</div>
+
+<%= form_for @restaurant, html: { class: "form-horizontal" } do |f| %>
+
+  <div class="row">
+    <div class="col-md-6">
+      <fieldset>
+        <legend>Restaurant</legend>
+        <%= render "restaurant_fields", f: f %>
+      </fieldset>
+    </div>
+
+    <div class="col-md-6">
+      <fieldset>
+        <legend>Owner Info</legend>
+        <%= f.fields_for :users, @restaurant.users.first || @restaurant.users.build do |user_f| %>
+          <%= render "owner_fields", f: user_f %>
+        <% end %>
+      </fieldset>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-12">
+      <%= f.submit "Create", class: "btn btn-default pull-right" %>
+    </div>
+  </div>
+  
+<% end %>

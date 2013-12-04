@@ -1,0 +1,36 @@
+<% if enabled.include? :delete %>
+  <%= link_to product_path(product), class: "btn btn-default", method: :delete, confirm: "Are you sure?" do %>
+    <span class="glyphicon glyphicon-trash"></span>
+    Delete
+  <% end %>
+<% end %>
+
+<% if enabled.include? :edit %>
+  <%= link_to edit_product_path(product), class: "btn btn-default" do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+<% end %>
+
+<% if enabled.include? :show %>
+  <%= link_to product_path(product), class: "btn btn-default" do %>
+    <span class="glyphicon glyphicon-search"></span>
+    Show
+  <% end %>
+<% end %>
+
+<% if enabled.include? :list %>
+  <%= link_to products_path, class: "btn btn-default" do %>
+    <span class="glyphicon glyphicon-list"></span>
+    List
+  <% end %>
+<% end %>
+
+<% if enabled.include? :new %>
+  <%= link_to new_product_path, class: "btn btn-default" do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New
+  <% end %>
+<% end %>
+  
+  

@@ -1,0 +1,36 @@
+<% if enabled.include? :delete %>
+  <%= link_to restaurant_path(restaurant), class: "btn btn-default", method: :delete, confirm: "Are you sure?" do %>
+    <span class="glyphicon glyphicon-trash"></span>
+    Delete
+  <% end %>
+<% end %>
+
+<% if enabled.include? :edit %>
+  <%= link_to edit_restaurant_path(restaurant), class: "btn btn-default" do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+<% end %>
+
+<% if enabled.include? :show %>
+  <%= link_to restaurant_path(restaurant), class: "btn btn-default" do %>
+    <span class="glyphicon glyphicon-search"></span>
+    Show
+  <% end %>
+<% end %>
+
+<% if enabled.include? :list %>
+  <%= link_to restaurants_path, class: "btn btn-default" do %>
+    <span class="glyphicon glyphicon-list"></span>
+    List
+  <% end %>
+<% end %>
+
+<% if enabled.include? :new %>
+  <%= link_to new_restaurant_path, class: "btn btn-default" do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New
+  <% end %>
+<% end %>
+  
+  

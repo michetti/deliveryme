@@ -1,0 +1,23 @@
+<div class="form-group <%= has_error? f.object, :name %>">
+  <%= f.label :title, class: "control-label col-md-2" %>
+  <div class="col-md-10">
+    <%= f.text_field :name, class: "form-control", autofocus: true %>
+    <%= error_message f.object, :name %>
+  </div>
+</div>
+
+<div class="form-group <%= has_error? f.object, :subdomain %>">
+  <%= f.label :subdomain, class: "control-label col-md-2" %>
+  <div class="col-md-10">
+    <%= f.text_field :subdomain, class: "form-control" %>
+    <%= error_message f.object, :subdomain %>
+  </div>
+</div>
+
+<div class="form-group <%= has_error? f.object, :domain %>">
+  <%= f.label :domain, class: "control-label col-md-2" %>
+  <div class="col-md-10">
+    <%= f.text_field :domain, class: "form-control" %>
+    <%= error_message f.object, :domain %>
+  </div>
+</div>

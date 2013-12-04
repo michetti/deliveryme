@@ -1,0 +1,44 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag "devise", media: "all", "data-turbolinks-track" => true %>
+<% end %>
+
+<%= form_for resource,
+             as: resource_name,
+             url: registration_path(resource_name),
+             html: { method: :put, class: "form-devise" } do |f| %>
+
+  <h2 class="form-devise-heading">Edit <%= resource_name.to_s.humanize %></h2>
+
+  <%= devise_error_messages! %>
+
+  <%= f.email_field :email,
+                    require: true,
+                    autofocus: true,
+                    placeholder: "Email address",
+                    class: "form-control" %>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <%= f.password_field :password,
+                       placeholder: "Password",
+                       autocomplete: "off",
+                       class: "form-control" %>
+  <div><i>(leave blank if you don't want to change it)</i></div>
+
+  <%= f.password_field :password_confirmation,
+                       placeholder: "Password Confirmation",
+                       class: "form-control" %>
+
+  <%= f.password_field :current_password,
+                       placeholder: "Current Password",
+                       class: "form-control" %>
+  <div><i>(we need your current password to confirm your changes)</i></div>
+
+  <%= f.submit "Update", class: "btn btn-lg btn-primary btn-block" %>
+<% end %>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+
+<%= link_to "Back", :back %>

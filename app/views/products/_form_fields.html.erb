@@ -1,0 +1,39 @@
+<div class="form-group <%= has_error? @product, :photo %>">
+  <%= f.label :title, class: "control-label col-sm-2 col-md-2" %>
+  <div class="col-sm-10 col-md-8">
+    <%= f.file_field :photo, class: "" %>
+    <%= error_message @product, :photo %>
+  </div>
+</div>
+
+<div class="form-group <%= has_error? @product, :title %>">
+  <%= f.label :title, class: "control-label col-sm-2 col-md-2" %>
+  <div class="col-sm-10 col-md-8">
+    <%= f.text_field :title, class: "form-control", autofocus: true %>
+    <%= error_message @product, :title %>
+  </div>
+</div>
+
+<div class="form-group <%= has_error? @product, :description %>">
+  <%= f.label :description, class: "control-label col-sm-2 col-md-2" %>
+  <div class="col-sm-10 col-md-8">
+    <%= f.text_area :description, rows: 5, class: "form-control" %>
+    <%= error_message @product, :description %>
+  </div>
+</div>
+
+<div class="form-group <%= has_error? @product, :tag_list %>">
+  <%= f.label :tag_list, class: "control-label col-sm-2 col-md-2" %>
+  <div class="col-sm-10 col-md-8">
+    <%= f.text_field :tag_list, class: "form-control" %>
+    <%= error_message @product, :tag_list %>
+  </div>
+</div>
+
+<div class="form-group <%= has_error? @product, :price %>">
+  <%= f.label :price, class: "control-label col-sm-2 col-md-2" %>
+  <div class="col-sm-10 col-md-8">
+    <%= f.text_field :price, class: "form-control" %>
+    <%= error_message @product, :price %>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<li class="media">
+  <a class="pull-left" href="#">
+    <%= image_tag product.photo.url(:thumb), class: "media-object img-thumbnail" %>
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">
+      <%= product.title %>
+      <small class="pull-right"><%= number_to_currency product.price %></small>
+    </h4>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="btn-group btn-group-sm">
+          <%= render "actions", product: product,  enabled: [:delete, :edit, :show] %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <b>Description: </b>
+        <%= product.description %>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-12">
+        <b>Categories: </b>
+        <% product.tag_list.each do |tag| %>
+          <%= tag %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</li>

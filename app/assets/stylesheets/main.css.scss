@@ -1,0 +1,14 @@
+// overhide bootstrap variables before the import
+// http://getbootstrap.com/customize/#less-variables
+// ex: $navbar-default-bg: #312312;
+@import "bootstrap";
+
+body {
+  margin-top: 50px;
+}
+
+#wrap {
+  .alert {
+    margin-top: 15px;
+  }
+}

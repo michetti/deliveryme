@@ -1,0 +1,26 @@
+<div class="page-header">
+  <div class="row">
+    <div class="col-md-6">
+      <h1><%= @restaurant.name %></h1>
+    </div>
+    <div class="col-md-6">
+      <div class="btn-group pull-right">
+        <%= render "actions", restaurant: @restaurant, enabled: [:delete, :edit, :show, :list, :new] %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Subdomain</dt>
+      <dd><%= @restaurant.subdomain %></dd>
+    
+      <dt>Domain</dt>
+      <dd><%= @restaurant.domain %></dd>
+    </dl>
+  </div>
+</div>
+
+

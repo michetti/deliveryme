@@ -1,0 +1,23 @@
+<div class="form-group <%= has_error? f.object, :email %>">
+  <%= f.label :email, class: "control-label col-md-2" %>
+  <div class="col-md-10">
+    <%= f.text_field :email, class: "form-control", autocomplete: :off %>
+    <%= error_message f.object, :email %>
+  </div>
+</div>
+
+<div class="form-group <%= has_error? f.object, :password %>">
+  <%= f.label :password, class: "control-label col-md-2" %>
+  <div class="col-md-10">
+    <%= f.password_field :password, class: "form-control" %>
+    <%= error_message f.object, :password %>
+  </div>
+</div>
+
+<div class="form-group <%= has_error? f.object, :password_confirmation %>">
+  <%= f.label :password_confirmation, class: "control-label col-md-2" %>
+  <div class="col-md-10">
+    <%= f.password_field :password_confirmation, class: "form-control" %>
+    <%= error_message f.object, :password_confirmation %>
+  </div>
+</div>
