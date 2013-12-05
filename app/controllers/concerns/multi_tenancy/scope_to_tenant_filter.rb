@@ -23,6 +23,6 @@ module MultiTenancy::ScopeToTenantFilter
   end
 
   def current_user_tenant_id
-    current_user.tenant_id
+    Tenant.current_user_tenant_id
   end
 end

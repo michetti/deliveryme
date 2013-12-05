@@ -30,8 +30,5 @@ module Dme
       Devise::UnlocksController.layout "clean"
       Devise::PasswordsController.layout "clean"      
     end
-
-    # app specifc multitenancy column
-    config.tenant_column = :restaurant_id
   end
 end

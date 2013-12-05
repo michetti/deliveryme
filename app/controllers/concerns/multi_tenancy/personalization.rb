@@ -6,7 +6,6 @@ module MultiTenancy::Personalization
   end
 
   def personalization(key)
-    puts key
     case key
     when :name
       current_tenant.present? ? current_tenant.name : "Delivery Me"
@@ -15,7 +14,4 @@ module MultiTenancy::Personalization
     end
   end
 
-  def find_by_subdomain(subdomain)
-    Tenant.find_by_subdomain(subdomain)
-  end
 end

@@ -2,6 +2,7 @@ Dme::Application.routes.draw do
   devise_for :admins
   devise_for :users
 
+  resources :themes
   resources :restaurants
 
   resource :store

@@ -6,7 +6,7 @@ class Product < ActiveRecord::Base
   acts_as_taggable
 
   # photo
-  has_attached_file :photo, styles: { thumb: "128x128" }, default_url: "/images/:style/missing.png"
+  has_attached_file :photo, styles: { thumb: "128x128", big: "1140x400" }, default_url: "/images/:style/missing.png"
 
   validates :title, :description, :price,
             presence: true

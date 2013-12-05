@@ -9,15 +9,23 @@
 
     <title><%= personalization :title %></title>
 
-    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <% if content_for? :head %>
+      <%= yield :head %>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <%= javascript_include_tag "html5shiv", "data-turbolinks-track" => true %>
-      <%= javascript_include_tag "respond", "data-turbolinks-track" => true %>
-    <![endif]-->
+    <% else %>
+      <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
 
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+        <%= javascript_include_tag "html5shiv", "data-turbolinks-track" => true %>
+        <%= javascript_include_tag "respond", "data-turbolinks-track" => true %>
+      <![endif]-->
+
+      <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <% end %>
+
+    <%= yield :head_additional %>
+
     <%= csrf_meta_tags %>
   </head>
 
