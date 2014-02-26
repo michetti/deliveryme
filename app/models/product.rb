@@ -1,6 +1,8 @@
 class Product < ActiveRecord::Base
-  include MultiTenancy::ScopeToTenant
   belongs_to :restaurant
+
+  # scope to current tenant
+  scope_to_tenant
 
   # tabs will be used to categorize products on menu
   acts_as_taggable

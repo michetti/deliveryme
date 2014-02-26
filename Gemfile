@@ -60,3 +60,6 @@ gem "paperclip", "~> 3.0"
 # Misc
 gem 'acts-as-taggable-on'
 gem 'quiet_assets', :group => :development
+
+# Multi Tenancy
+gem 'multi_tenancy', git: 'git@github.com:michetti/multi_tenancy.git'

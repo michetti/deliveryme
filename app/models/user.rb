@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  include MultiTenancy::ScopeToTenant
+  # scope to current tenant
+  scope_to_tenant
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

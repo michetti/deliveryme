@@ -1,6 +1,8 @@
 class Restaurant < ActiveRecord::Base
-  include MultiTenancy::Tenant
   has_many :products, dependent: :destroy
+
+  # add multi tenancy support
+  acts_as_tenant
 
   # tags will be used to categorize restaurants
   acts_as_taggable

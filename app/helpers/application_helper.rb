@@ -17,8 +17,8 @@ module ApplicationHelper
     html.html_safe
   end
 
-  def menu_item(name, link_path, active_on_controller)
-    html  = "<li class='#{'active' if active_on_controller.to_s == controller_name}'>"
+  def menu_item(name, link_path, active_on_controller, options)
+    html  = "<li class='#{'active' if active_on_controller.to_s == controller_name}' #{options[:class] || ''}>"
     html += link_to name, link_path
     html += "</li>"
 

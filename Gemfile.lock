@@ -1,3 +1,10 @@
+GIT
+  remote: git@github.com:michetti/multi_tenancy.git
+  revision: 115c26cab7dbfb9aeffa4d5ecfb1447d7404d60c
+  specs:
+    multi_tenancy (0.0.1)
+      rails (~> 4.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -54,7 +61,7 @@ GEM
     erubis (2.7.0)
     execjs (2.0.2)
     hike (1.2.3)
-    i18n (0.6.5)
+    i18n (0.6.9)
     jbuilder (1.5.2)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -65,7 +72,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mime-types (1.25)
+    mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.8.2)
     mysql2 (0.3.14)
@@ -141,6 +148,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 1.2)
   jquery-rails
+  multi_tenancy!
   mysql2
   paperclip (~> 3.0)
   quiet_assets

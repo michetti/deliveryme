@@ -4,27 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   # Resolve current Tenant from domain or subdomain
-  include MultiTenancy::DomainOrSubdomainTenantResolver
+  resolve_tenant_by_domain_or_subdomain
 
   # Scope requests to current tenant
-  include MultiTenancy::ScopeToTenantFilter
+  scope_requests_to_current_tenant
 
   # Add view per tenant view personalization
   include MultiTenancy::Personalization
-
-private
-  # overhide current_user_tenant_id method
-  def current_user_tenant_id
-    current_user.restaurant_id
-  end
-
-  # overhide default find_by_domain method
-  def find_by_domain(domain)
-    Restaurant.find_by_domain(domain)
-  end
-
-  # overhide default find_by_subdomain method
-  def find_by_subdomain(subdomain)
-    Restaurant.find_by_subdomain(subdomain)
-  end
 end
