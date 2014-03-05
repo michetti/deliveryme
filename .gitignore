@@ -25,9 +25,6 @@ Thumbs.db
 # Ignore vim .swp files
 *.swp
 
-# Ignore bin
-/bin
-
 # Ignore Mac OS files
 .DS_Store
 
